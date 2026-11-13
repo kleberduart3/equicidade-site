@@ -57,7 +57,10 @@ h2{font-size:clamp(30px,4vw,44px);line-height:1.12;font-weight:700;letter-spacin
 .legend{display:flex;flex-wrap:wrap;gap:14px;margin:0;padding:0;list-style:none}
 .legend li{display:inline-flex;align-items:center;gap:6px;font-size:12px}
 .legend i{width:10px;height:10px;border-radius:999px;display:inline-block}
-.map{width:100%;height:auto}
+.map{width:100%;height:auto;display:block}
+.map-card{margin:0;position:relative}
+.map-title img{width:20px;height:20px}
+.map-attr{position:absolute;right:8px;bottom:6px;font-size:11px;color:var(--ardosia-600);background:rgba(255,255,255,.85);padding:2px 6px;border-radius:4px}
 .map .cov{fill:var(--azul-200);fill-opacity:.5;stroke:var(--azul-500);stroke-opacity:.5;stroke-width:2}
 .map .def{fill:var(--coral-500);fill-opacity:.16;stroke:var(--coral-700);stroke-width:2.5;stroke-dasharray:7 6}
 .map .eq{fill:var(--azul-500);stroke:#fff;stroke-width:3}
