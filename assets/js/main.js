@@ -39,3 +39,19 @@ if(cp)cp.addEventListener('click',async()=>{
   try{await navigator.clipboard.writeText(url);msg.textContent='Link copiado'}catch(e){msg.textContent=url}
   setTimeout(()=>msg.textContent='',2500);
 });
+
+const bs=document.getElementById('btn-share'),ms=document.getElementById('menu-share');
+const URL_SITE='https://equicidade.com.br/',TXT_SITE='Equicidade: veja onde falta escola, creche e posto de saúde na sua cidade.';
+function fecha(){ms.hidden=true;bs.setAttribute('aria-expanded','false')}
+bs.addEventListener('click',async e=>{
+  e.stopPropagation();
+  if(navigator.share&&matchMedia('(pointer:coarse)').matches){try{await navigator.share({title:'Equicidade',text:TXT_SITE,url:URL_SITE});return}catch(err){}}
+  const abre=ms.hidden;ms.hidden=!abre;bs.setAttribute('aria-expanded',String(abre));
+});
+document.addEventListener('click',e=>{if(!ms.hidden&&!ms.contains(e.target))fecha()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!ms.hidden){fecha();bs.focus()}});
+document.getElementById('copiar2').addEventListener('click',async()=>{
+  const m=document.getElementById('sh-msg2');
+  try{await navigator.clipboard.writeText(URL_SITE);m.textContent='Link copiado'}catch(err){m.textContent=URL_SITE}
+  setTimeout(()=>m.textContent='',2500);
+});
