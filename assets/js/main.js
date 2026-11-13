@@ -31,3 +31,11 @@ if(!calmo&&'IntersectionObserver' in window){
       requestAnimationFrame(passo)},900);
   }
 }
+
+const cp=document.getElementById('copiar'),msg=document.getElementById('sh-msg');
+if(cp)cp.addEventListener('click',async()=>{
+  const url='https://equicidade.com.br/',txt='Equicidade: veja onde falta escola, creche e posto de saúde na sua cidade.';
+  if(navigator.share&&matchMedia('(pointer:coarse)').matches){try{await navigator.share({title:'Equicidade',text:txt,url});return}catch(e){}}
+  try{await navigator.clipboard.writeText(url);msg.textContent='Link copiado'}catch(e){msg.textContent=url}
+  setTimeout(()=>msg.textContent='',2500);
+});

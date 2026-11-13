@@ -154,3 +154,16 @@ h2{font-size:clamp(30px,4vw,44px);line-height:1.12;font-weight:700;letter-spacin
   .reveal{opacity:1;transform:none}
   .step::before{width:100%}
 }
+
+/* compartilhar e instagram */
+.share{margin-top:28px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px 20px}
+.share-t{font-size:15px;font-weight:600;color:var(--azul-900)}
+.share-btns{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.sh{width:48px;height:48px;border-radius:999px;border:1px solid var(--ardosia-200);background:#fff;color:var(--azul-900);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:transform .15s,background .15s,color .15s,border-color .15s}
+.sh:hover{transform:translateY(-2px);background:var(--azul-500);border-color:var(--azul-500);color:#fff}
+.sh-msg{font-size:14px;color:var(--azul-500);font-weight:600;min-width:1px}
+.ig{display:inline-flex;align-items:center;gap:8px;text-decoration:none}
+.ig:hover{color:#fff}
+.ig-top{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:999px;color:var(--azul-900)}
+.ig-top:hover{background:var(--azul-50);color:var(--azul-500)}
+@media (max-width:860px){.ig-top{width:auto;justify-content:flex-start;padding:12px 0}}
